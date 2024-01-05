@@ -3,11 +3,13 @@ html * {
     padding: 0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     box-sizing: border-box;
+    text-align: center;
+    font-size: 20px;
 }
 
 .mainPortfolioDiv {
     width: 100vw;
-    height: 100vh;
+    height: 130vh;
     display: flex;
 }
 
@@ -17,6 +19,7 @@ html * {
     width: 35vw;
     height: 100vh;
     border-right: 3px solid black;
+    border-bottom: 3px solid black;
 }
 
 .rightSideDiv {
@@ -25,15 +28,22 @@ html * {
     justify-content: space-evenly;
     align-items: center;
     width: 65vw;
+    height: fit-content;
+    gap: 50px;
 }
 
-.headerText, .subHeaderText{
-    margin: 0;
-    text-align: center;
+.headerText {
+    font-size: 30px;
+    margin-top: 20px;
 }
 
+.subHeaderText {
+    font-size: 27px;
+    padding: 10px;
+}
 
 .colorDiv {
+    margin-top: -35px;
     width: 50vw;
     height: 40vh;
     border: solid black 2px;
@@ -55,19 +65,22 @@ html * {
     background: linear-gradient(to right, rgb(132, 241, 122), rgb(173, 255, 198));
     width: 100%;
     height: 20%;
+    padding: 20px;
+
 }
 
 .projectsDiv {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 15px;
 }
 
 .project {
     width: 200px;
     height: 200px;
-    border: black solid 2px;
-    border-radius: 5px;
+    border-radius: 15px;
+    overflow: hidden;
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
