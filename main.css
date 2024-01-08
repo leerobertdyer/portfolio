@@ -9,8 +9,11 @@ html * {
 
 .mainPortfolioDiv {
     width: 100vw;
-    height: 130vh;
+    height: fit-content;
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: linear-gradient(to bottom right, white, antiquewhite);
 }
 
 .headerPhotoDiv {
@@ -49,9 +52,9 @@ html * {
     border: solid black 2px;
     border-radius: 12px;
     overflow: hidden;
-    -webkit-box-shadow: 11px 21px 5px 5px rgba(145, 93, 93, 1);
-    -moz-box-shadow: 11px 21px 5px 5px rgba(145, 93, 93, 1);
-    box-shadow: 11px 21px 5px 5px rgba(145, 93, 93, 1);
+    -webkit-box-shadow: 11px 11px 5px 5px rgba(145, 93, 93, 1);
+    -moz-box-shadow: 11px 11px 5px 5px rgba(145, 93, 93, 1);
+    box-shadow: 11px 11px 5px 5px rgba(145, 93, 93, 1);
 }
 
 .pinkDiv {
@@ -81,9 +84,9 @@ html * {
     height: 200px;
     border-radius: 15px;
     overflow: hidden;
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
 }
 
 .project:hover {
@@ -91,3 +94,19 @@ html * {
     transform: scale(110%);
     box-shadow: none;
 }
+
+@media (max-width: 850px) {
+    .headerPhotoDiv {
+        width: 50vw;
+        height: 200px;
+        margin: 25px auto;
+        border: 3px solid black;
+    }
+    .headerText {
+        margin: 0;
+    }
+    .subHeaderText {
+        font-size: 13px;
+    }
+}
+
