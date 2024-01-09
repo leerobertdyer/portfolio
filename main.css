@@ -5,6 +5,7 @@ html * {
     box-sizing: border-box;
     text-align: center;
     font-size: 20px;
+    scroll-behavior:smooth;
 }
 
 .mainPortfolioDiv {
@@ -22,7 +23,6 @@ html * {
     width: 35vw;
     height: 100vh;
     border-right: 3px solid black;
-    border-bottom: 3px solid black;
 }
 
 .rightSideDiv {
@@ -32,7 +32,15 @@ html * {
     align-items: center;
     width: 65vw;
     height: fit-content;
-    gap: 50px;
+    gap: 20px;
+}
+
+.navLinks {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
 }
 
 .headerText {
@@ -46,7 +54,6 @@ html * {
 }
 
 .colorDiv {
-    margin-top: -35px;
     width: 50vw;
     height: 40vh;
     border: solid black 2px;
@@ -69,7 +76,6 @@ html * {
     width: 100%;
     height: 20%;
     padding: 20px;
-
 }
 
 .projectsDiv {
@@ -87,15 +93,107 @@ html * {
     -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
 }
 
 .project:hover {
     transition: 1s;
     transform: scale(110%);
     box-shadow: none;
+    cursor: pointer;
 }
 
-@media (max-width: 850px) {
+.projectTitle {
+position: absolute;
+color: antiquewhite;
+background-color: rgba(24, 24, 24, .8);
+width: 200px;
+border-bottom-right-radius: 15px;
+border-bottom-left-radius: 15px;
+}
+
+#about {
+    width: 100vw;
+    height: fit-content;
+    background-color: cadetblue;
+    border-top: black solid 3px;
+    border-bottom: black solid 3px;
+    margin: 0 auto;
+    color: white;
+    padding: 0 20px 20px 0;
+}
+
+.aboutHeader {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 45px;
+}
+
+.bio {
+    font-size: 16px;
+    padding: 8px;
+}
+
+.bioPlus {
+    font-size: 20px;
+    padding: 13px;
+}
+
+.coding {
+    color: rgb(211, 65, 12);
+    font-size: 30px;
+}
+
+.littleBit {
+    color:rgb(132, 241, 122)
+}
+
+.codingTemple {
+    font-size: 23px;
+    padding: 10px 0 10px 0;
+    color: gold;
+}
+
+.whiteText {
+    color: white;
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: orange;
+    width: 100vw;
+    gap: 10px;
+    padding: 20px;
+} 
+
+.contactHeader {
+padding: 20px;
+font-size: 30px;
+width: 100%;
+}
+
+.btnDiv {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn {
+    background-color: gold;
+    color: black;
+    width: 150px;
+    border: solid black 1px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+@media (max-width: 970px) {
     .headerPhotoDiv {
         width: 50vw;
         height: 200px;
@@ -107,6 +205,39 @@ html * {
     }
     .subHeaderText {
         font-size: 13px;
+    }
+    .navLinks {
+        width: 100vw;
+    }
+}
+
+@media (max-width: 970px) {
+    .projectsDiv {
+        width: 100vw;
+        margin-top: 25px;
+        margin-bottom: 45px;
+    }
+}
+
+@media  (max-width: 670px) {
+    .rightSideDiv {
+        width: 95vw;
+        font-size: 12px;
+    }
+    .colorDiv {
+        width: 95%;
+    }
+    .project {
+        width: 300px;
+        height: 300px;
+    }
+
+    .projectTitle {
+        width: 300px;
+    }
+    .btn {
+        width: 100px;
+        height: 75px;
     }
 }
 

@@ -12,6 +12,11 @@
     <div class="mainPortfolioDiv" id="mainDiv">
         <div class="headerPhotoDiv"></div>
         <div class="rightSideDiv">
+            <div class="navLinks">
+                <a href="#about">About Me</a>
+                <!-- <a href="/projects.html">My Projects</a> -->
+                <a href="#contact">Contact</a>
+            </div>
             <div>
                 <h1 class="headerText">Hi, I'm Lee</h1>
                 <h2 class="subHeaderText">I love to make things work</h2>
@@ -20,26 +25,80 @@
                 <div class="pinkDiv">
                     Full Stack Engineer
                 </div>
-                <div class="greenDiv">Javascript/Python</div>
-                <div class="pinkDiv ">React/Flask</div>
-                <div class="greenDiv"></div>
-                <div class="pinkDiv">Check out my latest projects:</div>
+                <div class="greenDiv">React/Node.js → <a href="http://www.writeabadsong.com" target="_blank">Write A Bad
+                        Song</a></div>
+                <div class="pinkDiv ">Flask/Beautiful Soup → <a href="http://vavl.onrender.com"
+                        target="_blank">Ashvenue</a></div>
+                <div class="greenDiv">P5Js/Socket.io → <a href="https://pongdong.glitch.me/"
+                        target="_blank">PongPong</a></div>
+                <div class="pinkDiv whiteText">Click any project for more info:</div>
             </div>
+
             <div class="projectsDiv">
                 <div class="wabsDiv project">
                     <video src="./assets/wabs_screenCapture.mp4" height="100%" autoplay muted loop></video>
+                    <p class="projectTitle">Write A Bad Song</p>
                 </div>
                 <div class="pongDongDiv project">
                     <video src="./assets/pong_screenCapture.mp4" height="100%" autoplay muted loop></video>
+                    <p class="projectTitle">Pong Pong</p>
                 </div>
                 <div class="vavlDiv project">
                     <video src="./assets/vavl_screenCapture.mp4" height="100%" autoplay muted loop></video>
+                    <p class="projectTitle">Ashevenue</p>
                 </div>
+            </div>
+        </div>
+
+        <div id="about">
+            <h3 class="aboutHeader">About Me</h3>
+
+            <p class="bio">
+                When I was twelve my brother unwrapped a 63-key Casio keyboard for Christmas, and I’ve been a musician
+                ever since..
+            </p>
+            <p class="bioPlus">
+                <span class="coding">Until I dipped my toe into the world of coding.</span>
+            </p>
+            <p class="bio">
+                I set out initially to learn
+                <span class="littleBit">
+                    "just a little bit"
+                </span>
+                so I could make what I thought was a simple website.
+            </p>
+            <p class="bio">
+                Now several years later </p>
+                <p class="bio">
+                    with a certificate from
+                <span class="codingTemple">
+                    Coding Temple
+                </span>
+            </p>
+            <p clas="bio">
+                I’m still working on that website <a href="https://www.writeabadsong.com">(www.WriteABadSong.com)</a>
+            </p>
+            <p class="bioPlus">
+                And I'm looking forward to learning "just a little bit more" each day.
+            </p>
+        </div>
+        <div id="contact">
+            <h4 class="contactHeader">Contact Me</h4>
+            <div class="btnDiv">
+                <a href="mailto:lee.dyer.dev@gmail.com">
+                    <button class="btn">Email Me</button>
+                </a>
+                <a href="tel:12318818138">
+                    <button class="btn">Call Me</button>
+                </a>
+                <a href="https://tidycal.com/tinysun/interview">
+                    <button class="btn">Schedule Zoom</button>
+                </a>
             </div>
         </div>
     </div>
 
-<script src="./script.js"></script>
+    <script src="./script.js"></script>
 </body>
 
 </html>
