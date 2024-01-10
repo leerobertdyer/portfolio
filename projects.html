@@ -17,17 +17,70 @@
     </div>
     <div class="mainProjectsDiv">
 
-        <div class="wabsMainDiv">
+        <div class="wabsHeaderDiv">
             <h2 class="projectHeader">Write A Bad Song</h2>
         </div>
-        <div class="vavlMainDiv">
+        <div class="vavlHeaderDiv">
             <h2 class="projectHeader">Ashvenue</h2>
         </div>
-        <div class="pongMainDiv">
+        <div class="pongHeaderDiv">
             <h2 class="projectHeader">Pong Pong</h2>
         </div>
 
-        
+        <div class="wabsProjectDiv">
+            <h2 style="padding: 5px;">Write A Bad Song</h2>
+            <p class="projectDesc">
+                A songwriting social media website designed to encourage quantity over quality.<br />
+                You get points for posting songs, and can collaborate with others.
+            </p>
+            <span class="highlights">Highlights</span>
+            <div class="mainPoints">
+                <details style="margin-top: 5px;">
+                    <summary>socket.io</summary>
+                    <p class="hiddenText">
+                        Live updates when users submit a post, instant messaging, and notifications for different events
+                        were all made possible utilizing socket.io.
+                    </p>
+                </details>
+                <details>
+                    <summary>Collaboration</summary>
+                    <p class="hiddenText">
+                        Users are able to post lyrics or music alone, and help each other finish songs.
+                        Finished collaborations give points to both users.
+                    </p>
+                </details>
+            </div>
+            <br />
+            <span class="painPoints">Pain Points</span>
+            <div class="mainPoints">
+                <details style="margin-top: 5px;">
+                    <summary>Firebase Authentication</summary>
+                    <p class="hiddenText">
+                        I initially had my authentication route built using <span class="highlights">BCRYPT</span> to
+                        hash passwords, and cookies to store user information, but quickly hit walls with the method.
+                        After several dozens of hours of fixes and patches, I finally realized it was easier and better
+                        to let <span class="painPoints">Firebase</span> do the hard work, and as a result my app now
+                        functions on mobile devices without jumping through extra hoops.
+                    </p>
+                </details>
+                <details>
+                    <summary>Dropbox Authentication</summary>
+                    <p class="hiddenText">
+                        I initially thought using dropbox made sense because the site is designed to handle music files,
+                        but also profile pictures and other user content. But I've had difficulty with 3rd party cookies
+                        using this format, not to mention long load times and issues with registration. I am looking
+                        into using firebase storage as an alternative.
+                    </p>
+                </details>
+            </div>
+
+        </div>
+        <div class="vavlProjectDiv">
+
+        </div>
+        <div class="pongProjectDiv">
+
+        </div>
     </div>
 
 </body>

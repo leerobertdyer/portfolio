@@ -4,26 +4,94 @@
     align-items: center;
 }
 
-.wabsMainDiv {
+
+.wabsHeaderDiv {
     background-color: violet;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 100%;
 }
 
-.vavlMainDiv {
+.vavlHeaderDiv {
     background-color: powderblue;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 100%;
 }
 
-.pongMainDiv {
+.pongHeaderDiv {
     background-color: pink;
-    width: 100vw;
+    width: 100%;
+}
+
+.wabsProjectDiv {
+    border: groove violet 18px;
+    border-radius: 22px;
+    width: 85vw;
+    height: fit-content;
+    margin-top: 25px;
+    background-color: rgb(195, 234, 235);
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 10px 0 25px 0;
+}
+
+.vavlProjectDiv {
+    border: ridge powderblue 18px;
+    border-radius: 22px;
+    width: 85vw;
+    height: 200px;
+    background-color: rgb(195, 234, 235);
+    margin-top: 5px;
+}
+
+.pongProjectDiv {
+    border: groove pink 18px;
+    border-radius: 22px;
+    width: 85vw;
+    height: 200px;
+    background-color: rgb(195, 234, 235);
+    margin-top: 5px;
+
+}
+
+.projectDesc {
+    font-size: 16px;
+    padding: 10px;
+}
+
+.mainPoints {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+
+.highlights {
+    background-color: rgb(255, 255, 130);
+    width: 100%;
+}
+
+
+summary {
+    padding: 10px;
+    color: black;
+    background-color: white;
+    border: black solid 1px;
+    border-radius: 12px;
+}
+summary:hover {
+cursor: pointer;
+}
+
+.hiddenText {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 90%;
+    margin: 5px auto;
+}
+
+
+.painPoints {
+    background-color: rgb(255, 137, 137);
+    width: 100%;
 }
