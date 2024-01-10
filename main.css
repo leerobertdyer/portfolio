@@ -268,6 +268,17 @@ width: 100%;
     span {
         display: block;
     }
+    .seperator {
+        display: inline;
+    }
+
+}
+
+@media (max-width: 499px) {
+
+    .whiteText {
+        font-size: 12px;
+    }
 }
 
 
