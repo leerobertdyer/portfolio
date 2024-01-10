@@ -37,19 +37,26 @@
     border: ridge powderblue 18px;
     border-radius: 22px;
     width: 85vw;
-    height: 200px;
+    height: fit-content;
     background-color: rgb(195, 234, 235);
     margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0 25px 0;
 }
 
 .pongProjectDiv {
     border: groove pink 18px;
     border-radius: 22px;
     width: 85vw;
-    height: 200px;
+    height: fit-content;
     background-color: rgb(195, 234, 235);
     margin-top: 5px;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0 25px 0;
 }
 
 .projectDesc {
@@ -62,6 +69,7 @@
     flex-direction: column;
     align-items: center;
     gap: 5px;
+    width: 100%;
 }
 
 
@@ -70,8 +78,9 @@
     width: 100%;
 }
 
-
 summary {
+    margin: 0 auto;
+    width: 250px;
     padding: 10px;
     color: black;
     background-color: white;

@@ -12,27 +12,27 @@
 <body>
     <div class="navLinks">
         <a href="/index.html">Home</a>
-        <a href="/projects.html">My Projects</a>
         <a href="/index.html#contact">Contact</a>
     </div>
     <div class="mainProjectsDiv">
 
-        <div class="wabsHeaderDiv">
+        <a href="#wabs" class="wabsHeaderDiv">
             <h2 class="projectHeader">Write A Bad Song</h2>
-        </div>
-        <div class="vavlHeaderDiv">
+        </a>
+        <a href="#vavl" class="vavlHeaderDiv">
             <h2 class="projectHeader">Ashvenue</h2>
-        </div>
-        <div class="pongHeaderDiv">
+        </a>
+        <a href="#pong" class="pongHeaderDiv">
             <h2 class="projectHeader">Pong Pong</h2>
-        </div>
+        </a>
 
-        <div class="wabsProjectDiv">
-            <h2 style="padding: 5px;">Write A Bad Song</h2>
+        <div id="wabs" class="wabsProjectDiv">
+            <a href="https://www.writeabadsong.com" target="_blank" style="padding: 5px;">Write A Bad Song<br/>(live site)</a>
             <p class="projectDesc">
                 A songwriting social media website designed to encourage quantity over quality.<br />
                 You get points for posting songs, and can collaborate with others.
             </p>
+            <video src="./assets/wabs_screenCapture.mp4" controls width="30%" style="margin-bottom: 20px;"></video>
             <span class="highlights">Highlights</span>
             <div class="mainPoints">
                 <details style="margin-top: 5px;">
@@ -73,14 +73,105 @@
                     </p>
                 </details>
             </div>
-
         </div>
-        <div class="vavlProjectDiv">
 
+        <div id="vavl" class="vavlProjectDiv">
+            <a href="https://vavl.onrender.com/" target="_blank" style="padding: 5px;">Ashvenue <br/>(live site)</a>
+            <p class="projectDesc">
+                A webscrolling app that displays all major Asheville venue events.<br />
+                Automatically updates, and users can sort by date and venue.
+            </p>
+            <video src="./assets/vavl_screenCapture.mp4" controls width="30%" style="margin-bottom: 20px;"></video>
+            <span class="highlights">Highlights</span>
+            <div class="mainPoints">
+                <details style="margin-top: 5px;">
+                    <summary>Beautiful Soup</summary>
+                    <p class="hiddenText">
+                        Using Beautiful Soup was a breeze, it made scraping the easy part.
+                    </p>
+                </details>
+                <details>
+                    <summary>SQL Alchemy/Flask</summary>
+                    <p class="hiddenText">
+                        Using flask always feels right, and part of that is all the tools that come with it or work with
+                        it, like SQL Alchemy, which helps organize all the data coming in and process it for me.
+                    </p>
+                </details>
+            </div>
+            <br />
+            <span class="painPoints">Pain Points</span>
+            <div class="mainPoints">
+                <details style="margin-top: 5px;">
+                    <summary>Date/Time Parsing</summary>
+                    <p class="hiddenText">
+                        Using <span class="highlights">datetime</span> it was relatively easy to alter the incoming date
+                        strings,
+                        but some websites used DEC 1st, 2023 while others used 12/1/23 or december 1, 2023 or with no
+                        comma or sometimes all caps.
+                        It took a lot of finessing to get the date times in an appropriate format for database to be
+                        able to sort by date.
+                    </p>
+                </details>
+                <details>
+                    <summary>Long Waits</summary>
+                    <p class="hiddenText">
+                        I'm still working on a solution for this. I believe <span>multi-threading</span> is the answer,
+                        but
+                        also looking at ways to break out of the scraping when the information is already in the
+                        database, so when it does scrape,
+                        it isn't wasting time on redundant data.
+                    </p>
+                </details>
+            </div>
         </div>
-        <div class="pongProjectDiv">
 
+        <div id="pong" class="pongProjectDiv">
+            <a href="https://pongdong.glitch.me/" target="_blank" style="padding: 5px;">Pong Pong<br/>(live site)</a>
+            <p class="projectDesc">
+                A remake of the classic pong game with some twists.<br />
+                Multiplayer with multiple active games is possible.
+            </p>
+            <video src="./assets/pong_screenCapture.mp4" controls width="30%" style="margin-bottom: 20px;"></video>
+            <span class="highlights">Highlights</span>
+            <div class="mainPoints">
+                <details style="margin-top: 5px;">
+                    <summary>socket.io</summary>
+                    <p class="hiddenText">
+                        I used sockets to make the game constant for both players. It offers live updates 
+                        for events like hitting a wall panel or a paddle, or scoring, and updates accordingly.
+                    </p>
+                </details>
+                <details>
+                    <summary>Node.js Express Server</summary>
+                    <p class="hiddenText">
+                        I keep track of current connected players in a waiting room, and match them to games. Also handles game data and emission of socket events.
+                    </p>
+                </details>
+                <details>
+                    <summary>P5JS</summary>
+                    <p class="hiddenText">
+                        P5JS was a joy to work with, turning pure javascript into a game was very fun, and being able to see my code immediately on screen was awesome.
+                    </p>
+                </details>
+            </div>
+            <br />
+            <span class="painPoints">Pain Points</span>
+            <div class="mainPoints">
+                <details style="margin-top: 5px;">
+                    <summary>Physics</summary>
+                    <p class="hiddenText">
+                        Getting the ball to move in the right direction according to what a user would expect took some solid math skills and a lot of trial and error.
+                    </p>
+                </details>
+                <details>
+                    <summary>Multiplayer/Multiple Games</summary>
+                    <p class="hiddenText">
+                        Not only was it difficult to establish when to start a game, but also how to have multiple games at once. Once the game functioned this is what I spent the most time working on.
+                    </p>
+                </details>
+            </div>
         </div>
+
     </div>
 
 </body>
