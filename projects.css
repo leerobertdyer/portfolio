@@ -76,6 +76,8 @@
 .highlights {
     background-color: rgb(255, 255, 130);
     width: 100%;
+    margin-top: 20px;
+    margin-bottom: 5px;
 }
 
 summary {
@@ -103,4 +105,10 @@ cursor: pointer;
 .painPoints {
     background-color: rgb(255, 137, 137);
     width: 100%;
+    margin-bottom: 5px;
+}
+
+iframe {
+    border: black double 12px;
+    border-radius: 12px;
 }

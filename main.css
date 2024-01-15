@@ -65,6 +65,10 @@ html * {
     box-shadow: 11px 11px 5px 5px rgba(145, 93, 93, 1);
 }
 
+.colorDiv * {
+    font-family: 'Lemon', serif;
+}
+
 .fullStack {
     font-family: 'Lemon', serif;
     animation: scroll 2s ease-in-out forwards;
