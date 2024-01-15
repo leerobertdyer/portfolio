@@ -104,11 +104,13 @@ cursor: pointer;
 
 .painPoints {
     background-color: rgb(255, 137, 137);
-    width: 100%;
     margin-bottom: 5px;
 }
 
 iframe {
     border: black double 12px;
     border-radius: 12px;
+    min-width: 250px;
+    width: 40%;
+
 }
