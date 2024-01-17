@@ -267,7 +267,7 @@ li {
     font-size: 25px;
 }
 
-form {
+.formDiv {
     display: flex;
     flex-direction: column;
     align-items: center;
