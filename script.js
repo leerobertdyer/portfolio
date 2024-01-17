@@ -21,7 +21,7 @@ const sendEmail = async() => {
     })
     contact.appendChild(popup)
     const success = document.createElement('p')
-    success.innerHTML="Thank you! <br/>Your message has been sent<br/><br/>X"
+    success.innerHTML="Thank you! <br/>Your message has been sent<br/><br/><span class='bigRedX'>X</span>"
     success.className="success"
     popup.appendChild(success)
 
