@@ -4,16 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Lee Dyer Web Developer" />
-    <meta property="og:image" content="/images/leeIcon.png" />
-    <meta name="twitter:image" content="/images/leeIcon.png" />
+
     <title>Lee Dyer Fullstack Engineer</title>
     <link rel="stylesheet" href="main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&family=Lemon&display=swap"
         rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+        
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 
 
 </head>
@@ -90,11 +95,13 @@
             <h3 class="aboutHeader">About Me</h3>
 
             <p class="bio">
-                Hello! I am a Full Stack Software Engineer at Tiny Sun, a recording and production studio. I have over two years experience developing <span
+                Hello! I am a Full Stack Software Engineer at Tiny Sun, a recording and production studio. I have over
+                two years experience developing <span
                     style="color: rgb(0, 107, 0); display: inline;">user-friendly</span> <span
                     style="color: rgb(181, 48, 0); display: inline;">reliable</span> and <span
                     style="color: rgb(0, 34, 128); display: inline;">scalable</span> web applications using
-                <span class="bioPlus coding">React & Flask </span> and I’d love to <a href="#contact">talk with you more.</a>
+                <span class="bioPlus coding">React & Flask </span> and I’d love to <a href="#contact">talk with you
+                    more.</a>
             </p>
 
             <div class="skillsDiv">
@@ -143,13 +150,14 @@
                     and feed updates. Integrated Firebase for authentication and session management, and utilized
                     several API including dropbox, unsplash, and ninja for content creation and storage.
                 </p>
-                <br/>
+                <br />
                 <a href="https://www.ashvenue.com">Ashevenue</a>
                 <p>
-                    Built a Flask web-crawling app using Playwright and Beautiful Soup for tracking local music venues in Asheville, NC that leverages
+                    Built a Flask web-crawling app using Playwright and Beautiful Soup for tracking local music venues
+                    in Asheville, NC that leverages
                     SQLAlchemy to store relevant data in an SQL pg database and allows users to sort by venue and date.
                 </p>
-                <br/>
+                <br />
                 <a href="https://pongdong.glitch.me/">Pong Pong</a>
                 <p>
                     Recreated a new version of classic Pong Arcade game using P5JS, node.js, and express that allows
@@ -159,19 +167,19 @@
         </div>
 
         <div id="contact">
-            <div class='formDiv' >
+            <div class='formDiv'>
                 <h4 class="contactHeader">Contact Me</h4>
                 <label for="email">Email:</label>
-                <input type="email" required name="email" id="email" placeholder="your@email.com"/>
+                <input type="email" required name="email" id="email" placeholder="your@email.com" />
                 <label for="message">Message:</label>
-                <textarea name="message" id="message" required placeholder="thanks for reaching out..." ></textarea>
-                <button type="button" id="submitForm" class="btn" >Submit</button>
+                <textarea name="message" id="message" required placeholder="thanks for reaching out..."></textarea>
+                <button type="button" id="submitForm" class="btn">Submit</button>
             </div>
-                <a class="btn" href="https://tidycal.com/tinysun/interview">
-                    Schedule Zoom
-                </a>
-            </div>
+            <a class="btn" href="https://tidycal.com/tinysun/interview">
+                Schedule Zoom
+            </a>
         </div>
+    </div>
     </div>
 
     <script src="./script.js"></script>
