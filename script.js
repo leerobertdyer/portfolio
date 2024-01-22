@@ -25,7 +25,7 @@ const sendEmail = async() => {
     success.className="success"
     popup.appendChild(success)
 
-    const resp = await fetch('https://portfolio-server-28r2.onrender.com/send-email', {
+    const resp = await fetch('https://wabs-server.onrender.com/portfolio/contact', {
         method: "POST",
         headers: {"Content-Type": "Application/json"},
         body: JSON.stringify({
