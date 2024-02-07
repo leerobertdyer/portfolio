@@ -254,6 +254,8 @@ li {
 .mySkills {
     font-weight:900;
     font-size: 25px;
+    width: 90%;
+    max-width: 900px;
 }
 
 .importantSkill {
