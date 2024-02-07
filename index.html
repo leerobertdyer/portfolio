@@ -42,35 +42,19 @@
 </script>
 
 <body id="body">
+
     <div class="mainPortfolioDiv" id="mainDiv">
-        <div class="headerPhotoDiv"></div>
-        <div class="rightSideDiv">
-            <div class="navLinks">
-                <a href="#about">About Me</a>
-                <a href="/projects.html">My Projects</a>
-                <a href="#contact">Contact</a>
-            </div>
+        <div class="navLinks">
+            <a href="#about">About Me</a>
+            <a href="#contact">Contact</a>
+        </div>
+            <div class="headerPhotoDiv"></div>
+
             <div>
                 <h1 class="headerText">Hi, I'm Lee</h1>
-                <h2 class="subHeaderText">I love to make things work</h2>
+                <h2 class="subHeaderText">A fullstack software engineer specializing in React, Flask, and Node.js</h2>
             </div>
-            <div class="colorDiv">
-                <div class="pinkDiv">
-                    <p class="fullStack">
-                        Full Stack Engineer
-                    </p>
-                </div>
-                <div class="greenDiv">React/Node.js →
-                    <span>
-                        <a href="./projects.html#wabs">Write A Bad Song</a>
-                    </span>
-                </div>
-                <div class="pinkDiv ">Flask/Beautiful Soup → <a href="./projects.html#vavl">Ashvenue</a></div>
-                <div class="greenDiv">P5Js/Socket.io →
-                    <span>
-                        <a href="./projects.html#pong">PongPong</a>
-                </div>
-                </span>
+
                 <div class="pinkDiv">
                     <div>
                         <a class="whiteText" href="https://github.com/leerobertdyer" target="_blank">Github</a>
@@ -83,104 +67,83 @@
                             target="_blank">Resume</a>
                     </div>
                 </div>
-            </div>
+
 
             <div class="projectsDiv">
                 <h3 class="projectsHeader">Current Projects:</h3>
                 <p class="projectsHeader" style="font-size: 14px;">Click one to visit live site</p>
-                <a href="https://www.writeabadsong.com" class="wabsDiv project" target="_blank">
-                    <img class="projectImg" src="./assets/wabsScreenShot.png" height="100%" alt="" />
-                    <video class="projectVideo" src="./assets/wabs_screenCapture.mp4" height="100%" autoplay muted
-                        loop></video>
-                    <p class="projectTitle">Write A Bad Song</p>
+
+                <a href="https://www.auntvicki.rocks" class="project" target="_blank">
+                    <p class="projectTitle">Aunt Vicki</p>
+                    <img class="projectImg" src="./assets/auntVickiScreenshot.png" height="100%" alt="" />
                 </a>
-                <a href="https://pongpong.glitch.me/" class="pongDongDiv project" target="_blank">
-                    <img class="projectImg" src="./assets/pongScreenShot.png" height="100%" alt="" />
-                    <video class="projectVideo" src="./assets/pong_screenCapture.mp4" height="100%" autoplay muted
-                        loop></video>
-                    <p class="projectTitle">Pong Pong</p>
-                </a>
+                <p class="projectDescription">A React/Typscript website for Asheville Band Aunt Vicki. Implemented flickr API to load and display various sized photos available for download. Utilized Paypal API to process merch payments.</p>
+
                 <a href="https://www.ashvenue.com" class="vavlDiv project" target="_blank">
-                    <img class="projectImg" src="./assets/vavlScreenshot.png" height="100%" alt="" />
-                    <video class="projectVideo" src="./assets/vavl_screenCapture.mp4" height="100%" autoplay muted
-                        loop></video>
                     <p class="projectTitle">Ashevenue</p>
+                    <img class="projectImg" src="./assets/vavlScreenshot.png" height="100%" alt="" />
                 </a>
+                <p class="projectDescription">A Flask web-scraping app that tracks local venues and displays them all on one easily sorted page. Uses Beautiful-Soup and Playwright for the scraping, and a postgresql database to store and sort.</p>
+
+                <a href="https://www.writeabadsong.com" class="wabsDiv project" target="_blank">
+                    <p class="projectTitle">Write A Bad Song</p>
+                    <img class="projectImg" src="./assets/wabsScreenShot.png" height="100%" alt="" />
+                </a>
+                <p class="projectDescription">A React social-media site for songwriters. Utilizes Socket.io for live messaging, notifications, and feed update. Encourages songwriting through collaboration and monthly prizes.</p>
+
+                <a href="https://pongpong.glitch.me/" class="pongDongDiv project" target="_blank">
+                    <p class="projectTitle">Pong Pong</p>
+                    <img class="projectImg" src="./assets/pongScreenShot.png" height="100%" alt="" />
+                </a>
+                <p class="projectDescription">A P5Js Node.js remake of a classic arcade game. Pong Pong uses Socket.io and a node express server for game loop logic.</p>
+
+
             </div>
-        </div>
 
         <div id="about">
             <h3 class="aboutHeader">About Me</h3>
 
             <p class="bio">
-                Hello! I am a Full Stack Software Engineer at Tiny Sun, a recording and production studio. I have over
-                two years experience developing <span
-                    style="color: rgb(0, 107, 0); display: inline;">user-friendly</span> <span
-                    style="color: rgb(181, 48, 0); display: inline;">reliable</span> and <span
-                    style="color: rgb(0, 34, 128); display: inline;">scalable</span> web applications using
-                <span class="bioPlus coding">React & Flask </span> and I’d love to <a href="#contact">talk with you
-                    more.</a>
+                Hello! I am a Full Stack Software Engineer at <span style="color: orange; display: inline">Tiny Sun</span>, a recording and production studio. I have over
+                two years experience developing user-friendly, reliable, and scalable web applications using
+                React & Flask and I’d love to talk with you more.
             </p>
 
             <div class="skillsDiv">
                 <h3 class="mySkills">MY SKILLS</h3>
 
                 <ul>
-                    <li>*Javascript</li>
-                    <li>*Typescript</li>
-                    <li>*Python</li>
+                    <li class="importantSkill">*Javascript</li>
+                    <li class="importantSkill">*Typescript</li>
+                    <li class="importantSkill">*Python</li>
                     <li>*HTML</li>
                     <li>*CSS</li>
-                    <li>*React</li>
-                    <li>*Flask</li>
+                    <li class="importantSkill">*React</li>
                     <li>*Axios</li>
-                    <li>*Socket.io</li>
+                    <li class="importantSkill">*Flask</li>
                     <li>*Express</li>
                     <li>*Beautiful Soup</li>
                     <li>*Playwright</li>
+                    <li class="importantSkill">*Socket.io</li>
                     <li>*SQLAlchemy</li>
                     <li>*P5.js</li>
                     <li>*Tkinter</li>
                     <li>*Tailwind</li>
                     <li>*Material-UI</li>
-                    <li>*Node.js</li>
+                    <li class="importantSkill">*Node.js</li>
                     <li>*Firebase</li>
                     <li>*Netlify</li>
                     <li>*Render</li>
                     <li>*Glitch</li>
                     <li>*ElephantSQL</li>
                     <li>*Communication</li>
+                    <li class="importantSkill">Three.js</li>
                     <li>*Problem Solving</li>
                     <li>*Teamwork</li>
                     <li>*Creativity</li>
                     <li>*Adaptability</li>
                     <li>*Time Management</li>
                 </ul>
-            </div>
-
-            <div class="skillsDiv">
-                <h3 class="mySkills">Noteworthy projects:</h3>
-                <br />
-                <a href="https://www.writeabadsong.com" target="_blank">Write A Bad Song</a>
-                <p>
-                    Developed a React-based social media website that utilizes socket.io for live messages,
-                    notifications
-                    and feed updates. Integrated Firebase for authentication and session management, and utilized
-                    several API including dropbox, unsplash, and ninja for content creation and storage.
-                </p>
-                <br />
-                <a href="https://www.ashvenue.com">Ashevenue</a>
-                <p>
-                    Built a Flask web-crawling app using Playwright and Beautiful Soup for tracking local music venues
-                    in Asheville, NC that leverages
-                    SQLAlchemy to store relevant data in an SQL pg database and allows users to sort by venue and date.
-                </p>
-                <br />
-                <a href="https://pongpong.glitch.me/">Pong Pong</a>
-                <p>
-                    Recreated a new version of classic Pong Arcade game using P5JS, node.js, and express that allows
-                    multiple multi-player games to operate at once.
-                </p>
             </div>
         </div>
 
