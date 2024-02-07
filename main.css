@@ -221,6 +221,7 @@ width: 100%;
 .skillsDiv {
     padding: 15px;
     width: 100%;
+    max-width: 900px;
     margin: 10px auto 10px auto;
     color: black;
     text-align: start;
