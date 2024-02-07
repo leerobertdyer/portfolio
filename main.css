@@ -147,6 +147,7 @@ height: fit-content;
     padding: 8px;
     text-align: start;
     width: 100%;
+    max-width: 800px;
     margin: 0 auto;
 }
 
