@@ -1,4 +1,8 @@
 
+html, body {
+    background-color: antiquewhite;
+}
+
 html * {
     margin: 0;
     padding: 0;
@@ -17,7 +21,7 @@ html * {
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
-    background: linear-gradient(to bottom right, white, antiquewhite);
+
 }
 
 .headerPhotoDiv {
@@ -88,10 +92,18 @@ a:link, a:visited {
     margin-bottom: 25px;
 }
 
+.projectDiv {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 .project {
     transition: 1s;
     width: 50vw;
     height: 50vw;
+    min-width: 330px;
+    min-height: 330px;
     border: solid black 3px;
     border-radius: 15px;
     overflow: hidden;
@@ -106,7 +118,6 @@ a:link, a:visited {
 .project:hover {
     transition: 1s;
     transform: scale(101%);
-    cursor: pointer;
 }
 
 .projectTitle {
@@ -160,7 +171,7 @@ height: fit-content;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: orange;
+    background-color: antiquewhite;
     width: 100vw;
     gap: 10px;
     padding: 20px;
@@ -278,6 +289,7 @@ li {
     box-shadow: 2px 4px 31px 4px rgba(0,0,0,0.62);
     margin: 25px 0 45px 0;
     border: solid white 1px;
+    background-color: orange;
 }
 
 input {
@@ -325,6 +337,10 @@ textarea::placeholder{
 .bigRedX {
     font-size: 82px;
     color: red;
+}
+
+.zoomBtn {
+    margin-bottom: 45px;
 }
 
 
