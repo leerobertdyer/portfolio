@@ -6,7 +6,8 @@ const scene = new THREE.Scene()
 function adjustCanvasSize() {
     const canvas = document.querySelector('canvas.webgl');
     const documentHeight = document.body.scrollHeight;
-    canvas.style.height = `${documentHeight * .35}px`;
+    if (documentHeight > 1000) canvas.style.height = `${documentHeight * .35}px`;
+    else canvas.style.height = `${documentHeight * .55}px`;
     canvas.style.width = 'auto'
 }
 
