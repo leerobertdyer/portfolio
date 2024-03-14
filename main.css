@@ -1,6 +1,6 @@
 
 html, body {
-    background-color: antiquewhite;
+    background-color: rgb(62, 62, 62);
 }
 
 html * {
@@ -12,6 +12,12 @@ html * {
     font-size: 20px;
     scroll-behavior:smooth;
     text-decoration: none;
+}
+.webgl {
+position: absolute;
+top: 0;
+left: 0;
+width: auto;
 }
 
 .mainPortfolioDiv {
@@ -126,6 +132,7 @@ padding: 10px;
 border-bottom: 3px solid goldenrod;
 width: 100%;
 height: fit-content;
+background-color: antiquewhite;
 }
 
 .projectDescription {
@@ -171,7 +178,7 @@ height: fit-content;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: antiquewhite;
+    background-color: rgb(62, 62, 62);
     width: 100vw;
     gap: 10px;
     padding: 20px;
