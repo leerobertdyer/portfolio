@@ -1,3 +1,9 @@
+const isTouchDevice =
+  "ontouchstart" in window ||
+  navigator.maxTouchPoints > 0 ||
+  navigator.msMaxTouchPoints > 0;
+
+
 const vacuum = document.querySelector("#vacuum");
 let vacuumFlag = false;
 vacuum.addEventListener("click", () => (vacuumFlag = !vacuumFlag));
@@ -7,10 +13,10 @@ let broomFlag = false;
 broom.addEventListener("click", () => (broomFlag = !broomFlag));
 
 function hideCleaners() {
-    broom.style.display = "none";
-    setTimeout(() => {
-        vacuum.style.display = "none";
-    }, 1000);
+  broom.style.display = "none";
+  setTimeout(() => {
+    vacuum.style.display = "none";
+  }, 1000);
 }
 
 // Three JS
@@ -161,9 +167,9 @@ window.addEventListener("mousemove", (event) => {
   mouse.x = (event.clientX / sizes.width) * 2 - 1; // normalize mouse x
   mouse.y = -(event.clientY / sizes.height) * 2 + 1; // normalize mouse y
 
-  if (!vacuumFlag && !broomFlag) {
+  if (!vacuumFlag && !broomFlag && !isTouchDevice) {
     pushParticles();
-  } else if (!vacuumFlag && broomFlag) {
+  } else if (!vacuumFlag && broomFlag && !isTouchDevice) {
     broomParticles();
   }
 });

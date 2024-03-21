@@ -420,6 +420,9 @@ textarea::placeholder{
     .whiteText {
         font-size: 12px;
     }
+    .webgl {
+        display: none;
+    }
 }
 
 
