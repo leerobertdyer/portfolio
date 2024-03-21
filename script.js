@@ -3,7 +3,6 @@ let vacuumFlag = false;
 vacuum.addEventListener("click", () => (vacuumFlag = !vacuumFlag));
 
 const broom = document.querySelector("#broom");
-broom.style.display='none'
 let broomFlag = false;
 broom.addEventListener("click", () => (broomFlag = !broomFlag));
 
