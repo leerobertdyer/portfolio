@@ -14,12 +14,29 @@ html * {
     text-decoration: none;
 }
 .webgl {
-position: absolute;
+position: fixed;
 top: 0;
 left: 0;
 width: auto;
 }
 
+#vacuum {
+    position:fixed; 
+    left: 30px; 
+    top: 70px;
+    height: 20vw
+}
+
+#broom {
+    position:fixed; 
+    right: 30px; 
+    top: 40px;
+}
+
+#vacuum:hover, #broom:hover {
+    transition: 1s;
+    transform: scale(115%);
+}
 .mainPortfolioDiv {
     width: 100vw;
     height: fit-content;

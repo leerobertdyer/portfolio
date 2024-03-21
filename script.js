@@ -1,136 +1,204 @@
+const vacuum = document.querySelector("#vacuum");
+let vacuumFlag = false;
+vacuum.addEventListener("click", () => (vacuumFlag = !vacuumFlag));
+
+const broom = document.querySelector("#broom");
+broom.style.display='none'
+let broomFlag = false;
+broom.addEventListener("click", () => (broomFlag = !broomFlag));
+
+function hideCleaners() {
+    broom.style.display = "none";
+    setTimeout(() => {
+        vacuum.style.display = "none";
+    }, 1000);
+}
+
 // Three JS
 
-// const canvas = document.querySelector("canvas.webgl");
-// const scene = new THREE.Scene();
+//Add Eraser to clean up scene when dragged around it 'pops' the dirt bubbles...
+//Add Vacuum to suck them all into the top left corner...
 
-// const documentHeight = document.body.scrollHeight;
-// canvas.style.height = "1000px";
-// canvas.style.width = "auto";
+const canvas = document.querySelector("canvas.webgl");
+const scene = new THREE.Scene();
 
+const textureLoader = new THREE.TextureLoader();
+const bubbleTexture = textureLoader.load("./assets/bubble.png");
+const vacuumTexture = textureLoader.load("./assets/vacuum.png");
 
-// // LIGHTS
-// const directionalLight = new THREE.PointLight("#ff0000", 13);
-// directionalLight.position.set(0, 0, 5);
-// scene.add(directionalLight);
+// PARTICLES
+const particlesGeometry = new THREE.BufferGeometry();
+const particlesCount = 5040;
+const posArray = new Float32Array(particlesCount * 3);
+for (let i = 0; i < particlesCount; i++) {
+  const i3 = i * 3;
+  posArray[i3 + 0] = (Math.random() - 0.5) * 10;
+  posArray[i3 + 1] = (Math.random() - 0.5) * 10;
+  posArray[i3 + 2] = (Math.random() - 0.5) * 5;
+}
 
-// // Particles
-// const particlesCount = 1000;
-// const positions = new Float32Array(particlesCount * 3);
+particlesGeometry.setAttribute(
+  "position",
+  new THREE.BufferAttribute(posArray, 3)
+);
 
-// for (let i = 0; i < particlesCount; i++) {
-//   positions[i * 3 + 0] = (Math.random() - 0.5) * 2.5;
-//   positions[i * 3 + 1] = Math.random() - 0.5;
-//   positions[i * 3 + 2] = Math.random() * 10;
-// }
+const particlesMaterial = new THREE.PointsMaterial({
+  size: 0.075,
+  map: bubbleTexture,
+  alphaTest: 0.5,
+  transparent: true,
+});
 
-// const particlesGeometry = new THREE.BufferGeometry();
-// particlesGeometry.setAttribute(
-//   "position",
-//   new THREE.BufferAttribute(positions, 3)
-// );
+const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+scene.add(particlesMesh);
 
-// const particlesMaterial = new THREE.PointsMaterial({
-//   sizeAttenuation: true,
-//   size: 0.03,
-//   transparent: true,
-//   alphaTest: 0.5,
-// });
+// Store original positions
+const originalPositions = [];
+const positions = particlesGeometry.attributes.position.array;
+for (let i = 0; i < positions.length; i += 3) {
+  originalPositions.push(
+    new THREE.Vector3(positions[i], positions[i + 1], positions[i + 2])
+  );
+}
 
-// const particles = new THREE.Points(particlesGeometry, particlesMaterial);
-// scene.add(particles);
+// LIGHTS
+const pointLight = new THREE.PointLight("#ff0000", 23);
+pointLight.position.set(0, 0, 0);
+scene.add(pointLight);
 
-// // Window Sizing
-// const sizes = {
-//   width: window.innerWidth,
-//   height: window.innerHeight,
-// };
+// Window Sizing
+const sizes = {
+  width: window.innerWidth,
+  height: window.innerHeight,
+};
 
-// window.addEventListener("resize", () => {
-//   sizes.width = window.innerWidth;
-//   sizes.height = window.innerHeight;
+window.addEventListener("resize", () => {
+  sizes.width = window.innerWidth;
+  sizes.height = window.innerHeight;
 
-//   camera.aspect = sizes.width / sizes.height;
-//   camera.updateProjectionMatrix();
+  camera.aspect = sizes.width / sizes.height;
+  camera.updateProjectionMatrix();
 
-//   renderer.setSize(sizes.width, sizes.height);
-//   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-// });
+  renderer.setSize(sizes.width, sizes.height);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+});
 
-// // Group
-// const cameraGroup = new THREE.Group();
-// scene.add(cameraGroup);
+// Group
+const cameraGroup = new THREE.Group();
+scene.add(cameraGroup);
 
-// // Base camera
-// const camera = new THREE.PerspectiveCamera(
-//   35,
-//   sizes.width / sizes.height,
-//   0.1,
-//   100
-// );
-// camera.position.z = 6;
-// cameraGroup.add(camera);
+// Base camera
+const camera = new THREE.PerspectiveCamera(
+  35,
+  sizes.width / sizes.height,
+  0.1,
+  100
+);
+camera.position.z = 6;
+cameraGroup.add(camera);
 
-// // Renderer
-// const renderer = new THREE.WebGLRenderer({
-//   canvas: canvas,
-//   alpha: true,
-// });
-// renderer.setSize(sizes.width, sizes.height);
-// renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+// Renderer
+const renderer = new THREE.WebGLRenderer({
+  canvas: canvas,
+  alpha: true,
+});
+renderer.setSize(sizes.width, sizes.height);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-// // Cursor Logic
-// const cursor = {};
-// cursor.x = 0;
-// cursor.y = 0;
+// Mouse Logic
+const mouse = {};
+mouse.x = 0;
+mouse.y = 0;
 
-// window.addEventListener("mousemove", (event) => {
-//   cursor.x = event.clientX / sizes.width - 0.5;
-//   cursor.y = event.clientY / sizes.height - 0.5;
-// });
+const previousMouse = { x: 0, y: 0 };
 
-// // Animation Logic
-// const clock = new THREE.Clock();
-// let previousTime = 0;
+function pushParticles() {
+  for (let i = 0; i < originalPositions.length; i++) {
+    const posX = positions[i * 3];
+    const posY = positions[i * 3 + 1];
 
-// const originalParticlePositions = [...positions]
+    const dx = mouse.x - posX;
+    const dy = mouse.y - posY;
+    const distance = Math.sqrt(dx * dx + dy * dy);
 
-// const loop = () => {
-//   const elapsedTime = clock.getElapsedTime();
-//   const deltaTime = elapsedTime - previousTime;
-//   previousTime = elapsedTime;
+    const maxDistance = 0.6; // Adjust this for a larger or smaller effect radius
+    if (distance < maxDistance) {
+      const force = (1 - distance / maxDistance) * 0.5; // Adjust the 0.1 for stronger/weaker force
+      positions[i * 3] -= dx * force;
+      positions[i * 3 + 1] -= dy * force;
+    } else {
+      // Lerp back to original position
+      positions[i * 3] += (originalPositions[i].x - positions[i * 3]) * 0.05;
+      positions[i * 3 + 1] +=
+        (originalPositions[i].y - positions[i * 3 + 1]) * 0.05;
+    }
+  }
+  particlesGeometry.attributes.position.needsUpdate = true;
+}
 
-//   for (let i = 0; i < positions.length; i += 3) {
-//     // Get the original position
-//     const ox = originalParticlePositions[i];
-//     const oy = originalParticlePositions[i + 1];
+function broomParticles() {
+  const directionX = mouse.x - previousMouse.x;
+  const directionY = mouse.y - previousMouse.y;
 
-//     // Compute the displacement based on mouse proximity
-//     const dx = cursor.x - positions[i];
-//     const dy = cursor.y - positions[i + 1];
-//     const distance = dx + dy * 10
+  for (let i = 0; i < originalPositions.length; i++) {
+    const posX = positions[i * 3];
+    const posY = positions[i * 3 + 1];
 
-//     // Check if the mouse is close enough
-//     if (distance < 0.1) { // Adjust 0.1 as needed
-//       // Displace the particle away from the mouse  
-//       positions[i] += dx * 0.1; // Adjust 0.1 for reaction speed
-//       positions[i + 2] += dy * 0.1;
-//     } else {
-//       // Gradually move the particle back to its original position
-//       positions[i] += (ox - positions[i]) * 0.05; // Adjust 0.05 for return speed
-//       positions[i + 1] += (oy - positions[i + 1]) * 0.05;
-//     }
-//   }
+    const dx = mouse.x - posX;
+    const dy = mouse.y - posY;
+    const distance = Math.sqrt(dx * dx + dy * dy);
 
-//   // Update the geometry
-//   particlesGeometry.attributes.position.needsUpdate = true;
+    const maxDistance = 2.5; // Adjust this for a larger or smaller effect radius
+    if (distance < maxDistance) {
+      const force = (1 - distance / maxDistance) * 0.6; // Adjust the 0.1 for stronger/weaker force
+      positions[i * 3] += directionX * force;
+      positions[i * 3 + 1] += directionY * force;
+    }
+  }
+  particlesGeometry.attributes.position.needsUpdate = true;
+}
 
-//   renderer.render(scene, camera);
-//   window.requestAnimationFrame(loop);
-// };
+window.addEventListener("mousemove", (event) => {
+  mouse.x = (event.clientX / sizes.width) * 2 - 1; // normalize mouse x
+  mouse.y = -(event.clientY / sizes.height) * 2 + 1; // normalize mouse y
 
-// loop();
+  if (!vacuumFlag && !broomFlag) {
+    pushParticles();
+  } else if (!vacuumFlag && broomFlag) {
+    broomParticles();
+  }
+});
 
+window.addEventListener("scroll", () => {
+  const scrollRatio = -(window.scrollY / document.body.scrollHeight);
+  cameraGroup.position.y = scrollRatio * 3;
+  cameraGroup.position.z = scrollRatio;
+  canvas.style.top = scrollRatio;
+});
 
+// Animation Logic
+const clock = new THREE.Clock();
+let previousTime = 0;
+
+const loop = () => {
+  if (broomFlag || vacuumFlag) hideCleaners();
+  const elapsedTime = clock.getElapsedTime();
+  const deltaTime = elapsedTime - previousTime;
+  previousTime = elapsedTime;
+  for (let i = 0; i < particlesCount * 3; i += 3) {
+    if (vacuumFlag) {
+      positions[i] -= 0.1;
+      positions[i + 1] += 0.1;
+    }
+  }
+
+  particlesGeometry.attributes.position.needsUpdate = true;
+
+  renderer.render(scene, camera);
+  window.requestAnimationFrame(loop);
+};
+
+loop();
 
 // Form Handler
 const contact = document.getElementById("contact");
